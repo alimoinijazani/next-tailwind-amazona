@@ -42,7 +42,7 @@ export default function LoginScreen() {
       >
         <h1>Login</h1>
         <div className="mb-4">
-          <labet htmlFor="email">Email</labet>
+          <label htmlFor="email">Email</label>
           <input
             type="email"
             id="email"
@@ -60,7 +60,7 @@ export default function LoginScreen() {
           )}
         </div>
         <div className="mb-4">
-          <labet htmlFor="password">Password</labet>
+          <label htmlFor="password">Password</label>
           <input
             type="password"
             id="password"
