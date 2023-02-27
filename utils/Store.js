@@ -35,6 +35,7 @@ const reducer = (state, action) => {
       return {
         ...state,
         cart: { cartItems: [], shippingAddress: { location: {} } },
+        paymentMethod: '',
       };
     }
     case 'SAVE_SHIPPPING_ADDRESS': {
@@ -46,6 +47,15 @@ const reducer = (state, action) => {
             ...state.cart.shippingAddress,
             ...action.payload,
           },
+        },
+      };
+    }
+    case 'SAVE_PAYMENT_METHOD': {
+      return {
+        ...state,
+        cart: {
+          ...state.cart,
+          paymentMethod: action.payload,
         },
       };
     }
