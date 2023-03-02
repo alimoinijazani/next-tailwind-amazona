@@ -15,6 +15,7 @@ export default function Paymentmethod() {
   const { shippingAddress, paymentMethod } = cart;
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log('click');
     if (!selectedPaymentMethod) {
       return toast.error('payment method is required');
     }
@@ -26,7 +27,7 @@ export default function Paymentmethod() {
         paymentMethod: selectedPaymentMethod,
       })
     );
-    router.push('/placeorder');
+    return router.push('/placeorder');
   };
   useEffect(() => {
     if (!shippingAddress.address) {
@@ -63,7 +64,7 @@ export default function Paymentmethod() {
           >
             Back
           </button>
-          <button type="button" className="primary-button">
+          <button type="submit" className="primary-button">
             Next
           </button>
         </div>
@@ -71,3 +72,5 @@ export default function Paymentmethod() {
     </Layout>
   );
 }
+
+Paymentmethod.auth = true;
