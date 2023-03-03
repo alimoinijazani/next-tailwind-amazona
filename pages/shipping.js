@@ -19,11 +19,14 @@ export default function ShippingScreen() {
   } = useForm();
 
   useEffect(() => {
-    setValue('fullname', shippingAddress.fullname);
-    setValue('address', shippingAddress.address);
-    setValue('city', shippingAddress.city);
-    setValue('postalCode', shippingAddress.postalCode);
-    setValue('country', shippingAddress.country);
+    const setData = () => {
+      setValue('fullname', shippingAddress.fullname);
+      setValue('address', shippingAddress.address);
+      setValue('city', shippingAddress.city);
+      setValue('postalCode', shippingAddress.postalCode);
+      setValue('country', shippingAddress.country);
+    };
+    setData();
   }, [setValue, shippingAddress]);
 
   const submitHandler = ({ fullname, address, city, postalCode, country }) => {
