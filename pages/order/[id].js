@@ -32,14 +32,12 @@ function OrderScreen() {
   const [{ isPending }, paypalDispatch] = usePayPalScriptReducer();
   const { query } = useRouter();
   const { id: orderId } = query;
-  const [
-    { loading, error, order, successPay, loadingPay, errorPay },
-    dispatch,
-  ] = useReducer(reducer, {
-    loading: true,
-    order: {},
-    error: '',
-  });
+  const [{ loading, error, order, successPay, loadingPay }, dispatch] =
+    useReducer(reducer, {
+      loading: true,
+      order: {},
+      error: '',
+    });
   useEffect(() => {
     const fetchOrder = async () => {
       try {
