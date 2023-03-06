@@ -42,7 +42,7 @@ const reducer = (state, action) => {
       return { ...state, cart: { ...state.cart, cartItems: [] } };
     }
 
-    case 'SAVE_SHIPPPING_ADDRESS': {
+    case 'SAVE_SHIPPING_ADDRESS': {
       return {
         ...state,
         cart: {

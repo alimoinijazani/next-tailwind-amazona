@@ -13,6 +13,7 @@ export default function Paymentmethod() {
   const { state, dispatch } = useContext(Store);
   const { cart } = state;
   const { shippingAddress, paymentMethod } = cart;
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('click');
@@ -32,8 +33,9 @@ export default function Paymentmethod() {
   useEffect(() => {
     if (!shippingAddress.address) {
       return router.push('/shipping');
+    } else {
+      setSelectedPaymentMethod(paymentMethod || '');
     }
-    setSelectedPaymentMethod(paymentMethod || '');
   }, [paymentMethod, router, shippingAddress.address]);
   return (
     <Layout title="payment method">
